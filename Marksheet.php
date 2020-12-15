@@ -30,24 +30,46 @@ if (isset($_GET["btnCal"]))
   }
 } 
 ?>
+
 <html>
   <head>
     <title>Assignment no. 2</title>
+    <style>
+    body {background-color: lightgreen;}
+    table,th,td
+    {
+      background-color:lightblue;
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {padding:15px}
+    input{padding:5px 20px;}
+    input[type=submit]
+    { 
+    border:none;
+    background-color: green;
+    color: white;
+    padding: 10px 36px;
+    margin: 4px 2px;
+    }
+    
+    </style>
   </head>
   <body>
-    <form border="1px">
-    Enter Student Name<br>
-    <input type="text" name="txtName"><br>
-    Enter Marks of subject1<br>
-    <input type="text" name="txtSub1"><br>
-    Enter Marks of subject2<br>
-    <input type="text" name="txtSub2"><br>
-    Enter Marks of subject3<br>
-    <input type="text" name="txtSub3"><br>
-    <input type="submit" name="btnCal" value="Calculate">
+    <form border="1px" align="center">
+    Enter Student Name  :<br>
+    <input type="text" name="txtName" required><br>
+    Enter Marks of subject1 :<br>
+    <input type="text" name="txtSub1" maxlength="3" required><br>
+    Enter Marks of subject2 :<br>
+    <input type="text" name="txtSub2" maxlength="3" required><br>
+    Enter Marks of subject3 :<br>
+    <input type="text" name="txtSub3" maxlength="3" required><br><br>
+    <input type="submit" name="btnCal" value="Show Marksheet" >
     </form>
 
-    <table border="1px">
+    <table border="1px" align="center" >
+    <th colspan="2"> Marksheet</th>
     <tr>
      <td> <?php echo "Name" ?> </td>
     <td> <?php echo $sname ?> </td>
@@ -63,6 +85,10 @@ if (isset($_GET["btnCal"]))
     <tr>
     <td> <?php echo "Sub3" ?> </td>
     <td> <?php echo $sub3 ?> </td>
+    </tr>
+    <tr>
+    <td> <?php echo "Total" ?> </td>
+    <td> <?php echo $total ?> </td>
     </tr>
     <tr>
     <td> <?php echo "Percentage" ?> </td>
